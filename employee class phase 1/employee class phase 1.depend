@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1725999036 source:d:\bank-system\employee class phase 1\main.cpp
+	<iostream>
+	<string>
+	<cctype>
+	<employee.h>
+	"Client.h"
+	"Validation.h"
+	<Admin.h>
+
+1725998641 d:\bank-system\employee class phase 1\include\employee.h
+	<iostream>
+	<string>
+	<cctype>
+
+1725998641 d:\bank-system\employee class phase 1\include\client.h
+	<iostream>
+	<string>
+	"Validation.h"
+
+1725998641 d:\bank-system\employee class phase 1\include\validation.h
+	<iostream>
+	<string>
+
+1725998983 d:\bank-system\employee class phase 1\include\admin.h
+	<iostream>
+	<string>
+	<cctype>
+
