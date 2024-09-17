@@ -1,29 +1,16 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include <iostream>
-#include <string>
-#include "Validation.h"
-
-
-using namespace std;
-
-class Client
+#include "Person.h"
+class Client: public Person
 {
-	private:
-	int id;
-	string name;
-	string password;
+private:
 	double balance;
 public:
-	Client() {
+	Client() : Person() {
 		balance = 0;
 	}
-	Client(int id, string name, string password, double balance) {
-		this->id = id;
-		this->name = name;
-		this->password = password;
-		this->id = id;
+	Client(int id, string name, string password, double balance) : Person(id, name, password) {
 		setBalance(balance);
 	}
 	//setter
@@ -53,10 +40,7 @@ public:
 		cout << "Balance : " << balance << endl;
 	}
 	void display() {
-
-		cout << "Id : " << id << endl;
-		cout << "Name : " << name << endl;
-		cout << "Password : " << password << endl;
+		Person::display();
 		cout << "Balance : " << balance << endl;
 	}
 };
