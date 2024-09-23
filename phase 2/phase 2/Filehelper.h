@@ -8,9 +8,9 @@
 #include "Parserr.h"
 using namespace std;
 
-vector <Client>m1;
-vector <Employee>m2;
-vector <Admin>m3;
+static vector <Client>allClients;
+static vector <Employee>allEmployees;
+static vector <Admin> allAdmins;
 
 class Filehelper
 {
@@ -59,7 +59,7 @@ public:
 		fstream f("Client.txt", ios::in);
 		while (getline(f, s))
 		{
-			m1.push_back(Parserr::parse_to_client(s));
+			allClients.push_back(Parserr::parse_to_client(s));
 		}
 		f.close();
 	}
@@ -69,7 +69,7 @@ public:
 		fstream f("Employee.txt", ios::in);
 		while (getline(f, s))
 		{
-			m2.push_back(Parserr::parse_to_employee(s));
+			allEmployees.push_back(Parserr::parse_to_employee(s));
 		}
 		f.close();
 	}
@@ -79,7 +79,7 @@ public:
 		fstream f("Admin.txt", ios::in);
 		while (getline(f, s))
 		{
-			m3.push_back(Parserr::parse_to_admin(s));
+			allAdmins.push_back(Parserr::parse_to_admin(s));
 		}
 		f.close();
 	}
