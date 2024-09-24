@@ -1,2 +1,11 @@
 ﻿  phase 2.cpp
+D:\Projects\Visual studio projects\phase 2\phase 2\Employee.h(81,21): warning C4101: 'c': unreferenced local variable
+  (compiling source file 'phase%202.cpp')
+  
+D:\Projects\Visual studio projects\phase 2\phase 2\Admin.h(78,15): warning C4101: 'c': unreferenced local variable
+  (compiling source file 'phase%202.cpp')
+  
+D:\Projects\Visual studio projects\phase 2\phase 2\Admin.h(115,15): warning C4101: 'c': unreferenced local variable
+  (compiling source file 'phase%202.cpp')
+  
   phase 2.vcxproj -> D:\Projects\Visual studio projects\phase 2\x64\Debug\phase 2.exe

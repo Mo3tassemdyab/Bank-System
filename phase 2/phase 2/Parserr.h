@@ -10,8 +10,6 @@ using namespace std;
 
 class Parserr
 {
-private:
-
 public:
 	static vector<string> split(string r)
 	{

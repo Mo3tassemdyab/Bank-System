@@ -6,10 +6,10 @@
 using namespace std;
 
 
-class Client:public Person
+class Client :public Person
 {
 private:
-	double balance;
+	double balance = 0;
 public:
 	Client() : Person() {
 		balance = 0;
@@ -49,3 +49,4 @@ public:
 	}
 };
 
+vector <Client>m1;

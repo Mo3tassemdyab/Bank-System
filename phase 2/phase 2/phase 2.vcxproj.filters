@@ -41,5 +41,11 @@
     <ClInclude Include="Filehelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DataSourceInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

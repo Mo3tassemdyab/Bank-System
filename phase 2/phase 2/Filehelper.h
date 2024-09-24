@@ -2,20 +2,16 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
 #include "Client.h"
 #include "Employee.h"
 #include "Admin.h"
 #include "Parserr.h"
 using namespace std;
 
-static vector <Client>allClients;
-static vector <Employee>allEmployees;
-static vector <Admin> allAdmins;
 
 class Filehelper
 {
-private:
-
 public:
 	static void save_last_id(string s, int id)
 	{
@@ -59,7 +55,7 @@ public:
 		fstream f("Client.txt", ios::in);
 		while (getline(f, s))
 		{
-			allClients.push_back(Parserr::parse_to_client(s));
+			m1.push_back(Parserr::parse_to_client(s));
 		}
 		f.close();
 	}
@@ -69,7 +65,7 @@ public:
 		fstream f("Employee.txt", ios::in);
 		while (getline(f, s))
 		{
-			allEmployees.push_back(Parserr::parse_to_employee(s));
+			m2.push_back(Parserr::parse_to_employee(s));
 		}
 		f.close();
 	}
@@ -79,7 +75,7 @@ public:
 		fstream f("Admin.txt", ios::in);
 		while (getline(f, s))
 		{
-			allAdmins.push_back(Parserr::parse_to_admin(s));
+			m3.push_back(Parserr::parse_to_admin(s));
 		}
 		f.close();
 	}
