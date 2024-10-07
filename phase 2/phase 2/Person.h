@@ -16,8 +16,8 @@ public:
 		name = "";
 		password = "";
 	}
-	Person(int id, string name, string password) {
-		setID(id);
+	Person( string name, string password) {
+		id = 0;
 		setName(name);
 		setPassword(password);
 	}
@@ -54,9 +54,9 @@ public:
 	}
 	//method
 	void display() {
-		cout << "ID : " << id << endl;
-		cout << "Name : " << name << endl;
-		cout << "Password : " << password << endl;
+		cout << "ID: " << id << endl;
+		cout << "Name: " << name << endl;
+		cout << "Password: " << password << endl;
 	}
 };
 

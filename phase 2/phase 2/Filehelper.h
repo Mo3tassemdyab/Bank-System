@@ -49,6 +49,19 @@ public:
 		f.close();
 
 	}
+	static void save_admin(Admin a)
+	{
+		if (get_last_id("Adminlastid.txt") == 1)
+		{
+			cout << "their is a stored admin data already" << endl;
+			return;
+		}
+		save_last_id("Adminlastid.txt", 1);
+		fstream f("Admin.txt", ios::out);
+		f << 1 << "~" << a.getName() << "~" << a.getPassword() << "~" << a.get_salary() << "~" << endl;
+		f.close();
+
+	}
 	static void get_clients()
 	{
 		string s;

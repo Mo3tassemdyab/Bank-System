@@ -17,7 +17,7 @@ public:
     Employee() : Person() {
         salary = 0;
     }
-    Employee(int id, string name, string password, double salary) :Person(id, name, password) {
+    Employee(string name, string password, double salary) :Person(name, password) {
         setSalary(salary);
 
     }
@@ -36,7 +36,7 @@ public:
     void display()
     {
         Person::display();
-        cout << "salary = " << salary << endl;
+        cout << "Salary: " << salary << endl;
     }
     void add_client(Client& c)
     {
@@ -53,35 +53,36 @@ public:
                 return p;
             }
         }
-        throw 'n';
+        return NULL;
     }
     void list_clients()
     {
         for (int i = 0; i < m1.size(); i++)
         {
             m1[i].display();
-            cout << "==============================================================" << endl;
+            cout << "_______________________________________________________________________________________\n\n";
         }
     }
     void edit_client(int id, string name, string password, double balance)
     {
-        try
-        {
             Client* p = search_client(id);
-            p->setName(name);
-            p->setPassword(password);
-            p->setBalance(balance);
-            fstream f("Client.txt", ios::out);
-            for (int i = 0; i < m1.size(); i++)
+            if (p != NULL)
             {
-                f << m1[i].getID() << "~" << m1[i].getName() << "~" << m1[i].getPassword() << "~" << m1[i].getBalance() << "~" << endl;
+                p->setName(name);
+                p->setPassword(password);
+                p->setBalance(balance);
+                fstream f("Client.txt", ios::out);
+                for (int i = 0; i < m1.size(); i++)
+                {
+                    f << m1[i].getID() << "~" << m1[i].getName() << "~" << m1[i].getPassword() << "~" << m1[i].getBalance() << "~" << endl;
+                }
+                f.close();
             }
-            f.close();
-        }
-        catch (char c)
-        {
-            cout << "this client not found" << endl;
-        }
+            else
+            {
+                cout << "this client id not found" << endl;
+            }
+        
     }
 };
 

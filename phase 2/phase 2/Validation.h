@@ -9,7 +9,6 @@ class Validation
 public:
 	static bool validatename(string name) {
 		if (!(name.size() >= 5 && name.size() <= 20)) {
-			cout << "name must be alphabetic and min size is 5 and max size is 20" << endl;
 			return false;
 		}
 
@@ -31,7 +30,7 @@ public:
 		}
 		else
 		{
-			cout << "min password size is 8 and max is 20" << endl;
+			cout << "\nmin password size is 8 and max is 20" << endl;
 			return false;
 		}
 	}

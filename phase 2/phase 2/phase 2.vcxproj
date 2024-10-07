@@ -132,8 +132,10 @@
   <ItemGroup>
     <ClInclude Include="Admin.h" />
     <ClInclude Include="Client.h" />
+    <ClInclude Include="Clientmanager.h" />
     <ClInclude Include="DataSourceInterface.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="Employeemanager.h" />
     <ClInclude Include="Filehelper.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="Parserr.h" />

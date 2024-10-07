@@ -14,7 +14,7 @@ public:
 	Client() : Person() {
 		balance = 0;
 	}
-	Client(int id, string name, string password, double balance) : Person(id, name, password) {
+	Client(string name, string password, double balance) : Person( name, password) {
 		setBalance(balance);
 	}
 	//setter
@@ -45,7 +45,7 @@ public:
 	}
 	void display() {
 		Person::display();
-		cout << "Balance : " << balance << endl;
+		cout << "Balance: " << balance << endl;
 	}
 };
 

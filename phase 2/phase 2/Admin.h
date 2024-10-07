@@ -17,7 +17,7 @@ public:
 	{
 		salary = 0;
 	}
-	Admin(int id, string name, string password, double salary) :Person(id, name, password) {
+	Admin(string name, string password, double salary) :Person(name, password) {
 		setSalary(salary);
 
 	}
@@ -33,7 +33,7 @@ public:
 	void display()
 	{
 		Person::display();
-		cout << "salary = " << salary << endl;
+		cout << "salary: " << salary << endl;
 	}
 	void add_client(Client& c)
 	{
@@ -50,21 +50,21 @@ public:
 				return p;
 			}
 		}
-		throw 'n';
+		return NULL;
 	}
 	void list_clients()
 	{
 		for (int i = 0; i < m1.size(); i++)
 		{
 			m1[i].display();
-			cout << "==============================================================" << endl;
+			cout << "_______________________________________________________________________________________\n\n";
 		}
 	}
 	void edit_client(int id, string name, string password, double balance)
 	{
-		try
+		Client* p = search_client(id);
+		if (p != NULL)
 		{
-			Client* p = search_client(id);
 			p->setName(name);
 			p->setPassword(password);
 			p->setBalance(balance);
@@ -75,10 +75,11 @@ public:
 			}
 			f.close();
 		}
-		catch (char c)
+		else
 		{
-			cout << "this client not found" << endl;
+			cout << "this client id not found" << endl;
 		}
+
 	}
 	void add_employee(Employee& e)
 	{
@@ -95,27 +96,29 @@ public:
 				return p;
 			}
 		}
-		throw 'h';
+		return NULL;
 	}
 	void edit_employee(int id, string name, string password, double salary)
 	{
-		try
-		{
+		
 			Employee* p = search_employee(id);
-			p->setName(name);
-			p->setPassword(password);
-			p->setSalary(salary);
-			fstream f("Employee.txt", ios::out);
-			for (int i = 0; i < m2.size(); i++)
+			if (p != NULL)
 			{
-				f << m2[i].getID() << "~" << m2[i].getName() << "~" << m2[i].getPassword() << "~" << m2[i].get_salary() << "~" << endl;
+				p->setName(name);
+				p->setPassword(password);
+				p->setSalary(salary);
+				fstream f("Employee.txt", ios::out);
+				for (int i = 0; i < m2.size(); i++)
+				{
+					f << m2[i].getID() << "~" << m2[i].getName() << "~" << m2[i].getPassword() << "~" << m2[i].get_salary() << "~" << endl;
+				}
+				f.close();
 			}
-			f.close();
-		}
-		catch (char c)
-		{
-			cout << "this employee not found" << endl;
-		}
+			else
+			{
+				cout << "this employee id not found" << endl;
+			}
+		
 	}
 	void list_employees()
 	{
