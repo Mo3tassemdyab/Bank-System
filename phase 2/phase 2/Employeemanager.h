@@ -60,6 +60,9 @@ public:
 			cout << "Minimum balance is 1500!\n";
 		}
 		Client c(name, password, balance);
+		int x = Filehelper::get_last_id("Clientlastid.txt");
+		x++;
+		c.setID(x);
 		e->add_client(c);
 		FileManager::update_all_clients();
 		cout << "\nNew client added Successfully!\n\n";
@@ -155,7 +158,7 @@ public:
 		}
 		return p;
 	}
-	static bool employee_options(Employee* e)
+	static int employee_options(Employee* e)
 	{
 		int x;
 		cout << "Choose option: ";
@@ -184,12 +187,11 @@ public:
 			list_all_clients(e);
 			break;
 		case 7:
-			system("cls");
-			break;
+			return 2;
 		default:
-			return false;
+			return 0;
 		}
-		return true;
+		return 1;
 	}
 
 };

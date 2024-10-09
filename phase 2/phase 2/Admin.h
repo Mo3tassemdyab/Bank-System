@@ -33,7 +33,7 @@ public:
 	void display()
 	{
 		Person::display();
-		cout << "salary: " << salary << endl;
+		cout << "Salary: " << salary << endl;
 	}
 	void add_client(Client& c)
 	{
@@ -125,7 +125,7 @@ public:
 		for (int i = 0; i < m2.size(); i++)
 		{
 			m2[i].display();
-			cout << "==============================================================" << endl;
+			cout << "_______________________________________________________________________________________\n\n";
 		}
 	}
 

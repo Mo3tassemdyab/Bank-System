@@ -92,5 +92,6 @@ public:
 			add_admin(m3[i]);
 		}
 	}
+	
 };
 

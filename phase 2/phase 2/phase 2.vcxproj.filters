@@ -53,5 +53,11 @@
     <ClInclude Include="Employeemanager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Adminmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -44,7 +44,7 @@ public:
 	}
 	static bool validateSalary(double salary) {
 		if (salary < 5000) {
-			cout << "minimum salary is 5000.0" << endl;
+			
 			return false;
 		}
 		return true;

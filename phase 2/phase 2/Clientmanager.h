@@ -21,7 +21,7 @@ public:
 		cout << "4- Withdraw" << endl;
 		cout << "5- Deposit" << endl;
 		cout << "6- Transfer amount" << endl;
-		cout << "7- Logout" << endl;
+		cout << "7- Logout\n" << endl;
 	}
 	static void update_password(Person *p)
 	{
@@ -33,6 +33,7 @@ public:
 			p->setPassword(s);
 			FileManager::update_all_clients();
 			FileManager::update_all_employees();
+			FileManager::update_all_admins();
 			cout << "\n\nPassword Updated Successfully!\n" << endl;
 			system("pause");
 		}
@@ -51,12 +52,11 @@ public:
 		{
 			return NULL;
 		}
-		else
-		{
+		
 			return p;
-		}
+		
 	}
-	static bool client_options(Client* p)
+	static int client_options(Client* p)
 	{
 		int x;
 		cout << "Choose option: ";
@@ -153,13 +153,12 @@ public:
 			}
 		}
 		case 7:
-			system("cls");
-			break;
+			return 2;
 		default:
-			return false;
+			return 0;
 		
 		}
-		return true;
+		return 1;
 	}
 
 };
